@@ -1,0 +1,30 @@
+1,
+Staff.where(store_id: 2)
+
+2,
+Film.find_by(title: "BLANKET BEVERLY").inventories.size
+
+3,
+Film.select(:film_id, :title).joins(inventories: :rentals).where(rental: { rental_date: Time.new(2005).beginning_of_year..Time.new(2005).end_of_year, return_date: nil })
+
+4,
+Category.select("category.category_id, category.name, sum(payment.amount) as revenue").joins(films: { inventories: { rentals: :payments } }).group("category.category_id, category.name").limit(5).order(revenue: :desc)
+
+5,
+Category.select("category.category_id, name, count(*) as number_of_film").joins(:film_categories).group(:category_id, :name).having("number_of_film >= 60").order("number_of_film desc")
+
+6,
+Film.select(:film_id, :title).joins(:actors).where(actors: { first_name: 'JOE', last_name: 'SWANK' }).distinct
+
+7,
+Film.select(:film_id, :title, :length).joins(:actors).where("film.length >= ?", 100).where(actors: { first_name: 'JOE', last_name: 'SWANK' }).distinct
+
+8,
+Film.select(:film_id, :title).joins(:actors, :categories).where(actors: { first_name: 'JOE', last_name: 'SWANK' }).where(categories: { name: "Action" }).distinct
+
+9,
+Film.select(:film_id, :title, 'SUM(payment.amount) AS revenue').joins(:actors, inventories: { rentals: :payments }).where(actors: { first_name: 'JOE', last_name: 'SWANK' }).group(:film_id, :title).order('revenue DESC').limit(10)
+
+10,
+Film.select(:film_id, :title, 'SUM(payment.amount) AS revenue').joins(inventories: { rentals: :payments }).where(title: 'SUNRISE LEAGUE').group(:film_id, :title)
+

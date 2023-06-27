@@ -1,0 +1,15 @@
+current directory: /Users/ryoyaokuma/workspace/runteq/sql_active_record_practice/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.16.0/ext/bootsnap
+/Users/ryoyaokuma/.rbenv/versions/3.1.4/bin/ruby -I /Users/ryoyaokuma/.rbenv/versions/3.1.4/lib/ruby/3.1.0 extconf.rb
+creating Makefile
+
+current directory: /Users/ryoyaokuma/workspace/runteq/sql_active_record_practice/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230627-73469-va7c7v sitelibdir\=./.gem.20230627-73469-va7c7v clean
+
+current directory: /Users/ryoyaokuma/workspace/runteq/sql_active_record_practice/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230627-73469-va7c7v sitelibdir\=./.gem.20230627-73469-va7c7v
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/ryoyaokuma/workspace/runteq/sql_active_record_practice/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20230627-73469-va7c7v sitelibdir\=./.gem.20230627-73469-va7c7v install
+/opt/homebrew/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20230627-73469-va7c7v/bootsnap
